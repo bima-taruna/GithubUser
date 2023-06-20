@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/sv_detail"
+    android:fillViewport="true"
+    tools:context=".ui.DetailUserActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/DetailBody"
+        >
+
+        <ImageView
+            android:id="@+id/iv_profile_picture"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="24dp"
+            android:contentDescription="@string/detail_user_name"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            style="@style/TextContent.Name"
+            android:text="@string/detail_name"
+            app:layout_constraintEnd_toEndOf="@+id/iv_profile_picture"
+            app:layout_constraintStart_toStartOf="@+id/iv_profile_picture"
+            app:layout_constraintTop_toBottomOf="@+id/iv_profile_picture" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            style="@style/TextContent.caption.Username"
+            android:text="@string/detail_user_name"
+            app:layout_constraintEnd_toEndOf="@+id/tv_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+
+        <TextView
+            android:id="@+id/tv_followers"
+            style="@style/TextContent.caption"
+            android:text="@string/detail_followers"
+            app:layout_constraintEnd_toEndOf="@+id/tv_followersText"
+            app:layout_constraintStart_toStartOf="@+id/tv_followersText"
+            app:layout_constraintTop_toBottomOf="@+id/tv_followersText" />
+
+        <TextView
+            android:id="@+id/tv_followersText"
+            style="@style/TextContent.Subtitle"
+            android:text="@string/detail_followers"
+            app:layout_constraintEnd_toStartOf="@+id/tv_followingText"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_username"
+            app:textAllCaps="false" />
+
+        <TextView
+            android:id="@+id/tv_following"
+            style="@style/TextContent.caption"
+            android:text="@string/detail_following"
+            app:layout_constraintEnd_toEndOf="@+id/tv_followingText"
+            app:layout_constraintStart_toStartOf="@+id/tv_followingText"
+            app:layout_constraintTop_toBottomOf="@+id/tv_followingText" />
+
+        <TextView
+            android:id="@+id/tv_followingText"
+            style="@style/TextContent.Subtitle"
+            android:text="@string/detail_following"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/tv_followersText"
+            app:layout_constraintTop_toBottomOf="@+id/tv_username" />
+
+        <View
+            android:id="@+id/v_border"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/black_500"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_followers" />
+
+        <FrameLayout
+            android:id="@+id/fr_detail"
+            android:layout_width="411dp"
+            android:layout_height="408dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/v_border">
+
+        </FrameLayout>
+
+        <ProgressBar
+            android:id="@+id/detail_progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="128dp"
+            android:layout_marginEnd="32dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/fr_detail"
+            app:layout_constraintTop_toBottomOf="@+id/detail_progressBar"
+            app:srcCompat="@drawable/ic_unfavorite"
+            android:focusable="true"
+            android:contentDescription="@string/followers_fragment" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

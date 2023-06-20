@@ -35,6 +35,10 @@
             android:name=".ui.MainActivity"
             android:exported="true">
         </activity>
+        <meta-data
+            android:name="API_KEY"
+            android:value="${KEY}"/>
+
     </application>
 
 </manifest>

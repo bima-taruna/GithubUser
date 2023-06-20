@@ -9,12 +9,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiConfig {
     companion object{
-        private val key = BuildConfig.KEY
         fun getApiService(): ApiService {
             val authInterceptor = Interceptor { chain ->
                 val req = chain.request()
                 val requestHeader = req.newBuilder()
-                    .addHeader("Authorization", key)
+                    .addHeader("Authorization", BuildConfig.KEY)
                     .build()
                 chain.proceed(requestHeader)
             }
